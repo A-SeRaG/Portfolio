@@ -1,11 +1,11 @@
 import React from 'react'
-import navbar from './components/Navbar/navbar'
+import NavbarMain from './components/Navbar/NavbarMain'
 import './App.css'
 
 function App() {
   return (
-  <main>
-    <navbar />
+  <main className='font-family'>
+    <NavbarMain/>
   </main>
   );
 };
