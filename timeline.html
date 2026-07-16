@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Serag Hamed | Career Timeline</title>
+    <meta name="description" content="Ahmed Serag Hamed - Interactive professional timeline showing academic history, teaching projects, and technical milestones.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-software page-timeline">
+    <!-- Background Canvas for Interactive Particles -->
+    <canvas id="bg-particles"></canvas>
+    
+    <!-- Ambient Glow Blobs -->
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+    <div class="glow-blob blob-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">&lt;</span>AHMED.SERAG<span class="logo-accent">_&gt;</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#specializations" class="nav-link">Specializations</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#certificates" class="nav-link">Certificates</a>
+                <a href="index.html#hobbies" class="nav-link">Hobbies</a>
+                <a href="timeline.html" class="nav-link active">Timeline</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="customize.html" class="nav-link nav-btn-customize"><i class="fa-solid fa-gears"></i> Customize</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav">
+        <a href="index.html#about" class="mobile-nav-link">About</a>
+        <a href="index.html#specializations" class="mobile-nav-link">Specializations</a>
+        <a href="index.html#skills" class="mobile-nav-link">Skills</a>
+        <a href="index.html#projects" class="mobile-nav-link">Projects</a>
+        <a href="index.html#certificates" class="mobile-nav-link">Certificates</a>
+        <a href="index.html#hobbies" class="mobile-nav-link">Hobbies</a>
+        <a href="timeline.html" class="mobile-nav-link">Timeline</a>
+        <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+        <a href="customize.html" class="mobile-nav-link"><i class="fa-solid fa-gears"></i> Customize</a>
+    </div>
+
+    <!-- Main Container -->
+    <main>
+        <!-- Timeline Section -->
+        <section class="timeline-section" id="timeline-page-section">
+            <div class="section-header">
+                <div class="badge">MY ROADMAP</div>
+                <h2 class="section-title">Interactive Timeline</h2>
+                <p class="section-subtitle">Chronological milestones and formative stages of my technical and academic roadmap.</p>
+            </div>
+
+            <!-- Timeline Category Tabs -->
+            <div class="timeline-tabs-container">
+                <button class="timeline-tab active" id="tab-juniority" data-timeline-stage="juniority">
+                    <i class="fa-solid fa-child"></i>
+                    <span>Juniority <small>(Until High School)</small></span>
+                </button>
+                <button class="timeline-tab" id="tab-seniority" data-timeline-stage="seniority">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span>Seniority <small>(After High School)</small></span>
+                </button>
+            </div>
+
+            <!-- Timeline Tracks Container -->
+            <div class="timeline-container page-timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div id="timeline-events-container">
+                    <!-- Events loaded dynamically depending on selected tab -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Ahmed Serag Hamed. All rights reserved.</p>
+            <p>Designed and programmed with passion. Dynamic and editable.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

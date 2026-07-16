@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Serag Hamed | Professional Portfolio</title>
+    <meta name="description" content="Ahmed Serag Hamed - Full-Stack Developer, DevOps Engineer, EdTech Specialist, and Data Science Engineer. Explore my projects, skills, certificates, and timeline.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-software">
+    <!-- Background Canvas for Interactive Particles -->
+    <canvas id="bg-particles"></canvas>
+    
+    <!-- Ambient Glow Blobs -->
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+    <div class="glow-blob blob-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-accent">&lt;</span>AHMED.SERAG<span class="logo-accent">_&gt;</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#about" class="nav-link active">About</a>
+                <a href="#specializations" class="nav-link">Specializations</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#hobbies" class="nav-link">Hobbies</a>
+                <a href="timeline.html" class="nav-link">Timeline</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav">
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#specializations" class="mobile-nav-link">Specializations</a>
+        <a href="#skills" class="mobile-nav-link">Skills</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#certificates" class="mobile-nav-link">Certificates</a>
+        <a href="#hobbies" class="mobile-nav-link">Hobbies</a>
+        <a href="timeline.html" class="mobile-nav-link">Timeline</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+        <a href="customize.html" class="mobile-nav-link"><i class="fa-solid fa-gears"></i> Customize</a>
+    </div>
+
+    <!-- Main Container -->
+    <main>
+        <!-- Hero Section -->
+        <section id="about" class="hero-section">
+            <div class="hero-container">
+                <!-- Left side: text details -->
+                <div class="hero-content" id="hero-content-area">
+                    <div class="badge animate-fade-in">WELCOME TO MY PORTFOLIO</div>
+                    <h1 class="hero-title animate-slide-up" id="hero-name">
+                        AHMED <span class="gradient-text">SERAG</span> HAMED
+                    </h1>
+                    <p class="hero-subtitle animate-slide-up-delayed" id="hero-titles">
+                        Full-Stack Developer • AI & Robotics Instructor • STEAM Education Specialist
+                    </p>
+                    <p class="hero-description animate-slide-up-further" id="hero-summary">
+                        Loading professional summary...
+                    </p>
+                    <div class="hero-ctas animate-slide-up-further">
+                        <a href="#specializations" class="btn btn-primary">
+                            <span>Specializations</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get In Touch</span>
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Right side: Framed slideshow of photos -->
+                <div class="hero-visual animate-scale-up">
+                    <div class="glass-card hero-image-container">
+                        <div class="slideshow-frame" id="hero-slideshow">
+                            <!-- Dynamically loaded slide images go here -->
+                            <div class="slide active" style="background-image: url('assets/hero_bg.png');"></div>
+                        </div>
+                        <div class="slideshow-controls">
+                            <button class="slide-ctrl-btn" id="prev-slide" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <div class="slide-indicators" id="slide-indicators">
+                                <span class="slide-dot active" data-index="0"></span>
+                            </div>
+                            <button class="slide-ctrl-btn" id="next-slide" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                        <div class="glowing-border"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+                <span class="scroll-text">Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- Specializations Section -->
+        <section id="specializations" class="pillars-section">
+            <div class="section-header">
+                <div class="badge">MY CORE STRENGTHS</div>
+                <h2 class="section-title">Specializations</h2>
+                <p class="section-subtitle">A breakdown of my professional expertise, spanning robust engineering systems and educational architecture.</p>
+            </div>
+
+            <!-- Specializations Grid -->
+            <div class="specializations-grid" id="specializations-cards-grid">
+                <!-- Dynamically loaded specialization cards go here -->
+            </div>
+
+            <!-- Specialization Detailed Explorer -->
+            <div class="pillar-display-container glass-card" id="specialization-details-panel">
+                <!-- Dynamically loaded details panel contents go here -->
+            </div>
+        </section>
+
+        <!-- Skills and Technologies Section -->
+        <section id="skills" class="skills-section">
+            <div class="section-header">
+                <div class="badge">CAPABILITIES</div>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">Programming languages, web frameworks, systems tools, and soft skills driving my development.</p>
+            </div>
+
+            <div class="skills-container-grid">
+                <!-- Technical Skills Column -->
+                <div class="glass-card skills-column">
+                    <h3 class="skills-column-title"><i class="fa-solid fa-laptop-code"></i> Technical Stack</h3>
+                    <div class="skills-tag-group" id="tech-skills-container">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Soft Skills Column -->
+                <div class="glass-card skills-column">
+                    <h3 class="skills-column-title"><i class="fa-solid fa-puzzle-piece"></i> Professional & Soft Skills</h3>
+                    <div class="skills-tag-group" id="soft-skills-container">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Languages Column -->
+                <div class="glass-card skills-column">
+                    <h3 class="skills-column-title"><i class="fa-solid fa-language"></i> Languages</h3>
+                    <div class="languages-list" id="languages-container">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-header">
+                <div class="badge">CREATIONS</div>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">A showcase of software developments, data science analysis, and STEAM products.</p>
+            </div>
+
+            <div class="projects-grid" id="projects-container">
+                <!-- Dynamically loaded projects go here -->
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="certificates-section">
+            <div class="section-header">
+                <div class="badge">CREDENTIALS</div>
+                <h2 class="section-title">Certificates & Certifications</h2>
+                <p class="section-subtitle">Validated courses, academic degrees, and professional certifications representing my ongoing learning journey.</p>
+            </div>
+
+            <div class="certificates-grid" id="certificates-container">
+                <!-- Dynamically loaded certificates go here -->
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="hobbies-section">
+            <div class="section-header">
+                <div class="badge">INTERESTS</div>
+                <h2 class="section-title">Hobbies & Passions</h2>
+                <p class="section-subtitle">Beyond engineering and curriculum development, here are some of my personal interests.</p>
+            </div>
+
+            <div class="hobbies-grid" id="hobbies-container">
+                <!-- Dynamically loaded hobbies go here -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="section-header">
+                <div class="badge">LET'S CONNECT</div>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Interested in collaborating on EdTech curricula, DevOps automations, or full-stack software development?</p>
+            </div>
+
+            <div class="contact-container">
+                <!-- Info Cards Column -->
+                <div class="contact-info">
+                    <h3 class="contact-info-title">Contact Information</h3>
+                    <p class="contact-info-desc">Feel free to copy details or reach out through my professional networking links.</p>
+                    
+                    <div class="info-blocks" id="contact-info-blocks">
+                        <!-- Loaded dynamically -->
+                    </div>
+
+                    <div class="social-networks">
+                        <h4>Social Ecosystem</h4>
+                        <div class="social-icons" id="contact-social-icons">
+                            <!-- Loaded dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="contact-form-container glass-card">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" required placeholder="Ahmed Serag">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" required placeholder="you@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required placeholder="Partnership / Opportunity">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required rows="5" placeholder="Let's build something outstanding..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Transmission</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <div class="form-status" id="form-status-msg"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 <span id="footer-name-year">Ahmed Serag Hamed</span>. All rights reserved.</p>
+            <p>Designed and programmed with passion. Dynamic and editable.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

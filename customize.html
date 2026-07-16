@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Serag Hamed | Customization Console</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-software page-customize">
+    <!-- Background Canvas for Interactive Particles -->
+    <canvas id="bg-particles"></canvas>
+    
+    <!-- Ambient Glow Blobs -->
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">&lt;</span>AHMED.SERAG<span class="logo-accent">_&gt;</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#specializations" class="nav-link">Specializations</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#certificates" class="nav-link">Certificates</a>
+                <a href="index.html#hobbies" class="nav-link">Hobbies</a>
+                <a href="timeline.html" class="nav-link">Timeline</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="customize.html" class="nav-link active nav-btn-customize"><i class="fa-solid fa-gears"></i> Customize</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav">
+        <a href="index.html#about" class="mobile-nav-link">About</a>
+        <a href="index.html#specializations" class="mobile-nav-link">Specializations</a>
+        <a href="index.html#skills" class="mobile-nav-link">Skills</a>
+        <a href="index.html#projects" class="mobile-nav-link">Projects</a>
+        <a href="index.html#certificates" class="mobile-nav-link">Certificates</a>
+        <a href="index.html#hobbies" class="mobile-nav-link">Hobbies</a>
+        <a href="timeline.html" class="mobile-nav-link">Timeline</a>
+        <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+        <a href="customize.html" class="mobile-nav-link"><i class="fa-solid fa-gears"></i> Customize</a>
+    </div>
+
+    <!-- Customization Hub Main -->
+    <main class="customize-main">
+        <div class="customize-wrapper">
+            <!-- Sidebar Panel: Tab triggers -->
+            <aside class="customize-sidebar glass-card">
+                <div class="sidebar-title-block">
+                    <h3>Console Hub</h3>
+                    <p>Live portfolio editor</p>
+                </div>
+                <div class="sidebar-tabs">
+                    <button class="sidebar-tab active" data-tab="hero"><i class="fa-solid fa-id-card"></i> Hero Header</button>
+                    <button class="sidebar-tab" data-tab="specializations"><i class="fa-solid fa-layer-group"></i> Specializations</button>
+                    <button class="sidebar-tab" data-tab="skills"><i class="fa-solid fa-sliders"></i> Skill Sets</button>
+                    <button class="sidebar-tab" data-tab="projects"><i class="fa-solid fa-rocket"></i> Projects Grid</button>
+                    <button class="sidebar-tab" data-tab="certificates"><i class="fa-solid fa-award"></i> Certificates</button>
+                    <button class="sidebar-tab" data-tab="timeline"><i class="fa-solid fa-timeline"></i> Timeline Milestones</button>
+                    <button class="sidebar-tab" data-tab="hobbies"><i class="fa-solid fa-gamepad"></i> Hobbies & Passions</button>
+                    <button class="sidebar-tab" data-tab="contact"><i class="fa-solid fa-address-book"></i> Contacts & Links</button>
+                    <button class="sidebar-tab" data-tab="backups"><i class="fa-solid fa-database"></i> Backups & Reset</button>
+                </div>
+                <div class="sidebar-actions">
+                    <button id="save-all-btn" class="btn btn-primary btn-save-sidebar">
+                        <i class="fa-solid fa-floppy-disk"></i> Save All Changes
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Content Panel: Edit forms -->
+            <section class="customize-content glass-card">
+                <!-- HERO FORM -->
+                <div class="tab-panel active" id="tab-hero">
+                    <h3 class="panel-form-title">Hero Header Customization</h3>
+                    <p class="panel-form-desc">Modify your name, subtitles, summaries, and photo slideshow.</p>
+                    
+                    <form class="panel-form" id="form-hero">
+                        <div class="form-group">
+                            <label for="hero-name-input">Full Name</label>
+                            <input type="text" id="hero-name-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hero-titles-input">Subtitles / Roles (separated by • or comma)</label>
+                            <input type="text" id="hero-titles-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hero-summary-input">Professional Summary</label>
+                            <textarea id="hero-summary-input" rows="6" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Slideshow Photos</label>
+                            <div class="uploaded-photos-grid" id="hero-uploaded-photos">
+                                <!-- Base64 thumbnails with delete buttons go here -->
+                            </div>
+                            <label class="btn btn-secondary file-upload-label">
+                                <span><i class="fa-solid fa-plus"></i> Upload Photo</span>
+                                <input type="file" id="hero-photo-upload" accept="image/*" style="display: none;">
+                            </label>
+                            <span class="field-hint">Note: Upload images will be converted to Base64 and saved inside your browser storage. Keep sizes moderate.</span>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- SPECIALIZATIONS FORM -->
+                <div class="tab-panel" id="tab-specializations">
+                    <h3 class="panel-form-title">Specializations</h3>
+                    <p class="panel-form-desc">Edit details for your four core engineering pillars.</p>
+                    
+                    <div class="specs-selector-buttons" id="specs-selectors">
+                        <!-- Switches between editing the 4 specializations -->
+                    </div>
+                    
+                    <form class="panel-form" id="form-specialization" style="margin-top: 2rem;">
+                        <input type="hidden" id="spec-edit-id">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="spec-edit-title">Title</label>
+                                <input type="text" id="spec-edit-title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="spec-edit-icon">FontAwesome Icon Class (e.g. fa-solid fa-server)</label>
+                                <input type="text" id="spec-edit-icon" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="spec-edit-desc">Short Description</label>
+                            <input type="text" id="spec-edit-desc" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Key Accomplishments / Focus Bullet Points</label>
+                            <div class="bullet-list-builder" id="spec-bullets-builder">
+                                <!-- Bullet point text rows with remove button -->
+                            </div>
+                            <button type="button" class="btn btn-secondary btn-small" id="spec-add-bullet"><i class="fa-solid fa-plus"></i> Add Bullet Point</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- SKILLS FORM -->
+                <div class="tab-panel" id="tab-skills">
+                    <h3 class="panel-form-title">Skills & Technologies</h3>
+                    <p class="panel-form-desc">Configure technical tags, soft skills, and languages.</p>
+                    
+                    <!-- Technical Tags builder -->
+                    <div class="skills-builder-section">
+                        <h4>Technical Stack</h4>
+                        <div class="tag-input-row">
+                            <input type="text" id="tech-skill-new" placeholder="Add new skill (e.g. Kubernetes)">
+                            <button type="button" class="btn btn-secondary btn-small" id="tech-skill-add-btn">Add</button>
+                        </div>
+                        <div class="chips-grid" id="tech-skills-chips">
+                            <!-- Clickable delete tags loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Soft Tags builder -->
+                    <div class="skills-builder-section" style="margin-top: 2.5rem;">
+                        <h4>Soft Skills</h4>
+                        <div class="tag-input-row">
+                            <input type="text" id="soft-skill-new" placeholder="Add soft skill (e.g. Communication)">
+                            <button type="button" class="btn btn-secondary btn-small" id="soft-skill-add-btn">Add</button>
+                        </div>
+                        <div class="chips-grid" id="soft-skills-chips">
+                            <!-- Clickable delete tags loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Languages list builder -->
+                    <div class="skills-builder-section" style="margin-top: 2.5rem;">
+                        <h4>Languages</h4>
+                        <div class="tag-input-row">
+                            <input type="text" id="lang-name-new" placeholder="Language (e.g. German)">
+                            <input type="text" id="lang-level-new" placeholder="Level (e.g. Beginner)">
+                            <button type="button" class="btn btn-secondary btn-small" id="lang-add-btn">Add</button>
+                        </div>
+                        <div class="bullets-container" id="languages-list-builder">
+                            <!-- Languages listed with a delete trigger -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECTS FORM -->
+                <div class="tab-panel" id="tab-projects">
+                    <h3 class="panel-form-title">Featured Projects</h3>
+                    <p class="panel-form-desc">Add, edit, or delete items in your project gallery.</p>
+                    
+                    <button type="button" class="btn btn-secondary btn-small" id="project-add-new-btn" style="margin-bottom: 2rem;"><i class="fa-solid fa-plus"></i> Add New Project</button>
+                    
+                    <div class="editor-items-list" id="projects-editor-list">
+                        <!-- Project rows loaded with edit form details -->
+                    </div>
+                </div>
+
+                <!-- CERTIFICATES FORM -->
+                <div class="tab-panel" id="tab-certificates">
+                    <h3 class="panel-form-title">Certificates</h3>
+                    <p class="panel-form-desc">Add, edit, or delete your educational certificates and validations.</p>
+                    
+                    <button type="button" class="btn btn-secondary btn-small" id="cert-add-new-btn" style="margin-bottom: 2rem;"><i class="fa-solid fa-plus"></i> Add New Certificate</button>
+                    
+                    <div class="editor-items-list" id="certs-editor-list">
+                        <!-- Certificate edit rows loaded here -->
+                    </div>
+                </div>
+
+                <!-- TIMELINE FORM -->
+                <div class="tab-panel" id="tab-timeline">
+                    <h3 class="panel-form-title">Timeline Milestones</h3>
+                    <p class="panel-form-desc">Organize chronological events under Juniority (until High School) or Seniority (after High School) stages.</p>
+                    
+                    <button type="button" class="btn btn-secondary btn-small" id="time-add-new-btn" style="margin-bottom: 2rem;"><i class="fa-solid fa-plus"></i> Add New Timeline Event</button>
+                    
+                    <div class="editor-items-list" id="timeline-editor-list">
+                        <!-- Timeline edit blocks loaded here -->
+                    </div>
+                </div>
+
+                <!-- HOBBIES FORM -->
+                <div class="tab-panel" id="tab-hobbies">
+                    <h3 class="panel-form-title">Hobbies & Passions</h3>
+                    <p class="panel-form-desc">Add, edit, or delete personal interests and hobbies displayed on your profile.</p>
+                    
+                    <button type="button" class="btn btn-secondary btn-small" id="hobby-add-new-btn" style="margin-bottom: 2rem;"><i class="fa-solid fa-plus"></i> Add New Hobby</button>
+                    
+                    <div class="editor-items-list" id="hobbies-editor-list">
+                        <!-- Hobby edit rows loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- CONTACT FORM -->
+                <div class="tab-panel" id="tab-contact">
+                    <h3 class="panel-form-title">Contacts & Links</h3>
+                    <p class="panel-form-desc">Modify email, phone, location address, and social portfolio URLs.</p>
+                    
+                    <form class="panel-form" id="form-contact">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-email">Email Address</label>
+                                <input type="email" id="contact-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone">Phone Number</label>
+                                <input type="text" id="contact-phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-address">Location Address</label>
+                            <input type="text" id="contact-address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-linkedin">LinkedIn Profile Link</label>
+                            <input type="url" id="contact-linkedin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-github">GitHub Profile Link</label>
+                            <input type="url" id="contact-github" required>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- BACKUPS AND RESET -->
+                <div class="tab-panel" id="tab-backups">
+                    <h3 class="panel-form-title">Data Backups & Reset Utilities</h3>
+                    <p class="panel-form-desc">Export your current portfolio data, import a previously saved JSON configuration, or reset all data back to the default CV settings.</p>
+                    
+                    <div class="backup-actions">
+                        <div class="backup-card glass-card">
+                            <h4><i class="fa-solid fa-file-export"></i> Export Configuration</h4>
+                            <p>Download your current configuration as a JSON file to your local computer. Recommended before making large changes.</p>
+                            <button id="export-json-btn" class="btn btn-secondary"><i class="fa-solid fa-download"></i> Export JSON</button>
+                        </div>
+                        
+                        <div class="backup-card glass-card">
+                            <h4><i class="fa-solid fa-file-import"></i> Import Configuration</h4>
+                            <p>Upload a JSON configuration file to overwrite your current portfolio data state instantly.</p>
+                            <label class="btn btn-secondary file-upload-label">
+                                <span><i class="fa-solid fa-upload"></i> Choose JSON File</span>
+                                <input type="file" id="import-json-upload" accept=".json" style="display: none;">
+                            </label>
+                        </div>
+                        
+                        <div class="backup-card glass-card danger-card">
+                            <h4><i class="fa-solid fa-trash-arrow-up"></i> Factory Reset</h4>
+                            <p>Erase all customizations and restore the default curriculum vitae values originally loaded into your portfolio.</p>
+                            <button id="reset-default-btn" class="btn btn-primary btn-danger"><i class="fa-solid fa-rotate-left"></i> Reset to Defaults</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- Floating Save Status notifier -->
+    <div class="floating-save-notifier" id="save-status-toast">
+        <i class="fa-solid fa-circle-check"></i> Changes saved locally!
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
